@@ -1,16 +1,22 @@
 <?php
-$words = file("words.txt");
 
-$word = rtrim($words[array_rand($words)]);
+session_start();
 
-echo $word;
-echo "<br>";
+if (!isset($_SESSION['word'])) {
+    $words = file("words.txt");
+    $word = rtrim(strtoupper($words[array_rand($words)]));
+    $_SESSION['word'] = $word;
+    $_SESSION['guesses'] = [];
+    $_SESSION['lives'] = 6;
+    if (!isset($_SESSION['gamesWon'])) {
+        $_SESSION['gamesWon'] = 0;
+    }
+    if (!isset($_SESSION['gamesLost'])) {
+        $_SESSION['gamesLost'] = 0;
+    }
+}
 
-$wordLength = strlen($word);
-echo $wordLength;
-echo "<br>";
 
-$guesses = ["a", "e", "i"];
 
 for ($i = 0; $i < $wordLength; $i++) {
     if (in_array($word[$i], $guesses)) {
