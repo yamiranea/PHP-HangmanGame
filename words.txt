@@ -1,0 +1,9 @@
+apple
+banana
+carrot
+pears
+strawberry
+cabbage
+potato
+onion
+orange

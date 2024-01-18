@@ -1,12 +1,22 @@
 <?php
-$words = ["zapallo", "pera", "manzana"];
+$words = file("words.txt");
 
-$word = $words[array_rand($words)];
+$word = rtrim($words[array_rand($words)]);
 
 echo $word;
+echo "<br>";
 
 $wordLength = strlen($word);
+echo $wordLength;
+echo "<br>";
 
-for ($i = 1; $i <= $wordLength; $i++) {
-    echo "_ ";
+$guesses = ["a", "e", "i"];
+
+for ($i = 0; $i < $wordLength; $i++) {
+    if (in_array($word[$i], $guesses)) {
+        echo $word[$i];
+    } else {
+        echo "_";
+    }
+    echo " ";
 }
