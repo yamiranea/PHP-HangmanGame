@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Hangman The Game</title>
+    <link rel="stylesheet" href="./styles.css">
 </head>
 
 <body style="background: deepskyblue">
