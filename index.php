@@ -17,7 +17,7 @@
     <div style="margin: 0 auto; background: #dddddd; width:900px; height:900px; padding:5px; border-radius:3px;">
 
         <div style="display:inline-block; width: 500px; background:#fff;">
-            <img style="width:80%; display:inline-block;" src="<?php echo getCurrentPicture(getCurrentPart()); ?>" />
+            <img style="width:80%; display:inline-block;" src="<?php echo getCurrentPart(); ?>" />
 
             <?php if (gameComplete()) : ?>
             <h1>GAME COMPLETE</h1>
