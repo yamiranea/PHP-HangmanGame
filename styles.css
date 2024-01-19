@@ -1,0 +1,86 @@
+body {
+    background-color: #f5d9d2;
+    font-family: 'Roboto', sans-serif;
+}
+
+.game-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    margin: 0 auto;
+    background-color: white;
+    width: 1000px;
+    height: 1000px;
+    padding: 5px;
+    border-radius: 3px;;
+}
+
+h1 {
+    font-family: 'Abril Fatface', serif;
+}
+
+.img-container {
+    display: flex;
+    width: auto;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+img {
+    width: 80%;
+    display: inline-block;
+}
+
+.game-complete {
+    font-size: 28px;
+}
+
+.win-txt {
+    color: green;
+    font-size: 25px;
+}
+
+.lost-txt {
+    color: fuchsia;
+    font-size: 25px;
+}
+
+.guess-word-container {
+    margin-top: 20px;
+    padding: 15px;
+    color: black;
+}
+
+span {
+font-size: 35px;
+border-bottom: 3px solid #000;
+margin-right: 5px;
+width: auto;
+}
+
+.keys-container {
+display: inline;
+vertical-align: top;
+}
+.keys-btn {
+    background-color: #f5d9d2;
+    color: white;
+    width: 37px;
+    height: 37px;
+    border-radius: 11px;
+}
+
+.submit-btn {
+    width: 181px;
+    height: 59px;
+    border-radius: 18px;
+    background-color: #f5d9d2;
+    color: white;
+    font-weight: bold;
+    border-style: none;
+    font-size: 20px;
+    margin-left: 35%;
+    margin-top: 15px;
+}
