@@ -1,39 +1,71 @@
-<?php
+<!DOCTYPE html>
+<html>
 
-session_start();
+<head>
+    <meta charset="UTF-8">
+    <title>Hangman The Game</title>
+</head>
 
-if (!isset($_SESSION['word'])) {
-    $words = file("words.txt");
-    $word = rtrim(strtoupper($words[array_rand($words)]));
-    $_SESSION['word'] = $word;
-    $_SESSION['guesses'] = [];
-    $_SESSION['lives'] = 6;
-    if (!isset($_SESSION['gamesWon'])) {
-        $_SESSION['gamesWon'] = 0;
-    }
-    if (!isset($_SESSION['gamesLost'])) {
-        $_SESSION['gamesLost'] = 0;
-    }
-}
-?>
+<body style="background: deepskyblue">
 
-<form method="post" action="">
-    <select name="guess">
-        <?php
-        foreach (range('A', 'Z') as $letter) {
-            echo '<option value = "' . strtoupper($letter) . '">' . strtoupper($letter) . '</option>';
-        }
-        ?>
-    </select>
-    <input type="submit" name="submit" value="GUESS">
-</form>
+    <?php
+    include 'game_logic.php';
 
-<?php
-for ($i = 0; $i < $wordLength; $i++) {
-    if (in_array($word[$i], $guesses)) {
-        echo $word[$i];
-    } else {
-        echo "_";
-    }
-    echo " ";
-}
+    $guess = getCurrentWord();
+    ?>
+
+    <div style="margin: 0 auto; background: #dddddd; width:900px; height:900px; padding:5px; border-radius:3px;">
+
+        <div style="display:inline-block; width: 500px; background:#fff;">
+            <img style="width:80%; display:inline-block;" src="<?php echo getCurrentPicture(getCurrentPart()); ?>" />
+
+            <?php if (gameComplete()) : ?>
+            <h1>GAME COMPLETE</h1>
+            <?php endif; ?>
+            <?php if ($WON && gameComplete()) : ?>
+            <p style="color: darkgreen; font-size: 25px;">You Won! HURRAY! :)</p>
+            <?php elseif (!$WON && gameComplete()) : ?>
+            <p style="color: darkred; font-size: 25px;">You LOST! OH NO! :( <br>The correct word was:
+                <?php echo getCurrentWord(); ?></p>
+            <?php endif; ?>
+
+        </div>
+
+        <div style="float:right; display:inline; vertical-align:top;">
+            <h1>Hangman the Game</h1>
+            <div style="display:inline-block;">
+                <form method="get">
+                    <?php
+                    $letters = range('A', 'Z');
+                    foreach ($letters as $letter) {
+                        echo "<button type='submit' name='kp' value='$letter'>$letter</button>";
+                        if ($letter % 7 == 0 && $letter > 0) {
+                            echo '<br>';
+                        }
+                    }
+                    ?>
+                    <br><br>
+                    <button type="submit" name="start">Restart Game</button>
+                </form>
+            </div>
+        </div>
+
+        <div style="margin-top:20px; padding:15px; background: lightseagreen; color: #fcf8e3">
+            <?php
+            $maxLetters = strlen($guess) - 1;
+            for ($j = 0; $j <= $maxLetters; $j++) :
+                $l = $guess[$j];
+            ?>
+            <?php if (in_array($l, getCurrentResponses())) : ?>
+            <span style="font-size: 35px; border-bottom: 3px solid #000; margin-right: 5px;"><?php echo $l; ?></span>
+            <?php else : ?>
+            <span style="font-size: 35px; border-bottom: 3px solid #000; margin-right: 5px;">&nbsp;&nbsp;&nbsp;</span>
+            <?php endif; ?>
+            <?php endfor; ?>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
