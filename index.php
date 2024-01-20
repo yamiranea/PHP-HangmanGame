@@ -5,9 +5,10 @@
     <meta charset="UTF-8">
     <title>Hangman The Game</title>
     <link rel="stylesheet" href="./styles.css">
-    <style>
-    @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Roboto:wght@100;400&display=swap');
-    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Roboto:wght@100;400&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
@@ -25,12 +26,12 @@
             <img src="<?php echo getCurrentPart(); ?>" />
 
             <?php if (gameComplete()) : ?>
-            <h1 class="game-complete">GAME COMPLETE</h1>
+            <h1 class="game-complete">GAME COMPLETED</h1>
             <?php endif; ?>
             <?php if ($WON && gameComplete()) : ?>
-            <p class="win-txt">You Won! HURRAY! :)</p>
+            <p class="win-txt">Yay, YOU WON! 🎉</p>
             <?php elseif (!$WON && gameComplete()) : ?>
-            <p class="lost-txt">You LOST! OH NO! :( <br>The correct word was:
+            <p class="lost-txt">Oh no, YOU LOST! 😔 <br>The correct word was:
                 <?php echo getCurrentWord(); ?></p>
             <?php endif; ?>
 
