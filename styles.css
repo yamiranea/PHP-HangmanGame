@@ -64,12 +64,15 @@ width: auto;
 display: inline;
 vertical-align: top;
 }
+
 .keys-btn {
     background-color: #f5d9d2;
     color: white;
     width: 37px;
     height: 37px;
     border-radius: 11px;
+    border: 1px solid #8e8e8e;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
 }
 
 .submit-btn {
@@ -79,8 +82,8 @@ vertical-align: top;
     background-color: #f5d9d2;
     color: white;
     font-weight: bold;
-    border-style: none;
     font-size: 20px;
     margin-left: 35%;
     margin-top: 15px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
 }
