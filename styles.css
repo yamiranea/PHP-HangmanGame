@@ -10,8 +10,8 @@ body {
     gap: 20px;
     margin: 0 auto;
     background-color: white;
-    width: 1000px;
-    height: 1300px;
+    width: 1200px;
+    height: 1500px;
     padding: 5px;
     border-radius: 3px;;
 }
@@ -37,7 +37,7 @@ img {
 
 .win-txt {
     color: green;
-    font-size: 25px;
+    font-size: 34px;
 }
 
 .lost-txt {
