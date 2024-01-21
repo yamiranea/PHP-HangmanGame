@@ -7,7 +7,6 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 20px;
     margin: 0 auto;
     background-color: white;
     width: 1200px;
@@ -18,7 +17,7 @@ body {
 
 h1 {
     font-family: 'Abril Fatface', serif;
-    font-size: 44px;
+    font-size: 30px;
 }
 
 .img-container {
@@ -30,30 +29,30 @@ h1 {
 }
 
 img {
-    width: 80%;
+    width: 55%;
     display: inline-block;
 }
 
 
 .win-txt {
     color: green;
-    font-size: 34px;
+    font-size: 24px;
 }
 
 .lost-txt {
     color: #E91E63;
-    font-size: 34px;
+    font-size: 24px;
     text-align: center;
 }
 
 .guess-word-container {
-    margin-top: 20px;
     padding: 15px;
     color: #5d5c5c;
+    margin-bottom: 20px;
 }
 
 span {
-    font-size: 45px;
+    font-size: 35px;
     border-bottom: 3px solid #706f6f;
     margin-right: 5px;
     width: auto;
@@ -68,25 +67,25 @@ span {
 .keys-btn {
     background-color: #f5d9d2;
     color: white;
-    font-size: 24px;
+    font-size: 18px;
     font-weight: bold;
-    width: 50px;
-    height: 50px;
+    width: 37px;
+    height: 37px;
     border-radius: 11px;
     border-style: none;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
-    margin: 6px;
+    margin: 3px;
 }
 
 .submit-btn {
-    width: 240px;
-    height: 70px;
+    width: 190px;
+    height: 55px;
     background-color: #f5d9d2;
     color: white;
     font-weight: bold;
-    font-size: 26px;
-    margin-left: 28%;
-    margin-top: 15px;
+    font-size: 20px;
+    margin-left: 38%;
+    margin-top: 0px;
     border-radius: 18px;
     border-style: none;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
