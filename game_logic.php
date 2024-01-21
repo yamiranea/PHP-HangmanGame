@@ -12,10 +12,6 @@ function getCurrentPicture($part)
     return "img/" . $part;
 }
 
-function startGame()
-{
-}
-
 function restartGame()
 {
     session_destroy();
@@ -81,7 +77,7 @@ function isWordCorrect()
     $responses = getCurrentResponses();
     $max = strlen($guess) - 1;
     for ($i = 0; $i <= $max; $i++) {
-        if (!in_array($guess[$i],  $responses)) {
+        if (!in_array($guess[$i], $responses)) {
             return false;
         }
     }
@@ -97,7 +93,6 @@ function isBodyComplete()
     return false;
 }
 
-
 function gameComplete()
 {
     return isset($_SESSION["gamecomplete"]) ? $_SESSION["gamecomplete"] : false;
@@ -111,6 +106,32 @@ function markGameAsComplete()
 function markGameAsNew()
 {
     $_SESSION["gamecomplete"] = false;
+}
+
+function displayGuessedWord()
+{
+    $guess = getCurrentWord();
+
+    $maxLetters = strlen($guess) - 1;
+    for ($j = 0; $j <= $maxLetters; $j++) {
+        $l = $guess[$j];
+        if (in_array($l, getCurrentResponses())) {
+            echo "<span>$l</span>";
+        } else {
+            echo "<span>&nbsp;&nbsp;&nbsp;</span>";
+        }
+    }
+}
+
+function displayKeyboardButtons()
+{
+    $letters = range('A', 'Z');
+    foreach ($letters as $letter) {
+        echo "<button class='keys-btn' type='submit' name='kp' value='$letter'>$letter</button>";
+        if ($letter % 7 == 0 && $letter > 0) {
+            echo '<br>';
+        }
+    }
 }
 
 if (isset($_GET['start'])) {

@@ -38,31 +38,13 @@
         </div>
 
         <div class="guess-word-container">
-            <?php
-            $maxLetters = strlen($guess) - 1;
-            for ($j = 0; $j <= $maxLetters; $j++) :
-                $l = $guess[$j];
-            ?>
-            <?php if (in_array($l, getCurrentResponses())) : ?>
-            <span><?php echo $l; ?></span>
-            <?php else : ?>
-            <span>&nbsp;&nbsp;&nbsp;</span>
-            <?php endif; ?>
-            <?php endfor; ?>
+            <?php displayGuessedWord(); ?>
         </div>
 
         <div class="keys-container">
             <div>
                 <form method="get">
-                    <?php
-                    $letters = range('A', 'Z');
-                    foreach ($letters as $letter) {
-                        echo "<button class='keys-btn' type='submit' name='kp' value='$letter'>$letter</button>";
-                        if ($letter % 7 == 0 && $letter > 0) {
-                            echo '<br>';
-                        }
-                    }
-                    ?>
+                    <?php displayKeyboardButtons(); ?>
                     <br><br>
                     <button class="submit-btn" type="submit" name="start">Restart Game</button>
                 </form>
