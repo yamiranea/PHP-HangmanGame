@@ -5,6 +5,10 @@
 <h3> 🎯 Challenge: Create a Hangman game with PHP to acquire and reinforce practical PHP skills, applying concepts such as string manipulation, control structures, functions and web forms.</h2>
 
 <p><em>The game has been created with a friendly approach to give a twist to the classic "hangman" image, thus allowing different types of users to enjoy it. It also makes use of emojis, colors and images to make the interface more friendly and fun.</em></p>
+<image
+  src="img/gameImg_0.png"
+  alt="Descripción de la imagen"
+  caption="Leyenda de la imagen">
 
 <h4> 🏁 Features:</h4>
 <ul>
